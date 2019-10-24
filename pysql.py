@@ -1,6 +1,10 @@
 import pymysql
+'''
+处理数据库信息
 
 
+
+'''
 class phone():
     def __init__(self):
         self.con = pymysql.connect(host="localhost", user="root",password="maybe@1998",database="phone",charset="utf8")
