@@ -19,9 +19,10 @@ no.2 phone_number
 
 
 class MyMainWindow(QMainWindow,Ui_MainWindow):
-
-
     def __init__(self):
+        '''
+        主界面初始化联系人表
+        '''
         super().__init__()
         self.setupUi(self)
         self.phone = pysql.phone()
@@ -42,15 +43,15 @@ class MyMainWindow(QMainWindow,Ui_MainWindow):
 
 
 class addLink(QDialog,Ui_AddLink):
-    
+
     def __init__(self):
         QDialog.__init__(self)
-        
         self.setupUi(self)
         btn1 = self.yes
         btn1.clicked.connect(lambda: self.sendMessage(self.lineEdit.text(),self.lineEdit_2.text()))
 
-    
+
+
     def sendMessage(self,name,number):
 
         phone = pysql.phone()

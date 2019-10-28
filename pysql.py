@@ -7,7 +7,7 @@ import pymysql
 '''
 class phone():
     def __init__(self):
-        self.con = pymysql.connect(host="localhost", user="root",password="maybe@1998",database="phone",charset="utf8")
+        self.con = pymysql.connect(host="167.179.105.150", user="root",password="maybe@1998",database="phone",charset="utf8")
         curs = self.con.cursor()
         sql = "select * from link order by name"
         curs.execute(sql)
@@ -42,6 +42,10 @@ class phone():
     def closeSql(self):
         self.con.close()
 
+'''
+测试脚本
+'''
 if __name__ == "__main__":
     p = phone()
-    print(p.search("gxp"))
+  #  p.insert("gxp","15651776888")
+    print(p.phoneListShow())
